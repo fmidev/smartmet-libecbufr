@@ -1,0 +1,38 @@
+*         1         2         3         4         5         6         7         8
+*234567890123456789012345678901234567890123456789012345678901234567890123456789012345
+*
+002181  Supplementary present weather sensor        Flag-Table   0          0    21
+002193  Antenna rotation direction                  Code-Table   0          0     2
+007192  Pixel size in Z-direction                   Meters      -1          0    16
+021036  Radar rainfall intensity                    mm*h-1       2          0    16
+021198  dBZ-value offset (Alpha)                    dBZ          2      -6400    14
+021199  dBZ-value increment (Beta)                  dBZ          1          0     7
+021200  Height of CAPPI                             m            0      -1000    15
+021201  Range-bin size                              Meter        0          0    14
+021202  Azimuthal resolution                        Degree       1          0     8
+021203  Range-bin offset                            Meter       -1          0    14
+021204  Azimuth offset                              Degree       1          0    12
+021205  V-value offset (av)                         m/s          2     -16384    15
+021206  V-value increment (bv)        		    m/s          2          0     8
+021207  W-value offset (aw)        		    m/s          2          0    14
+021208  W-value increment (bw) 			    m/s          2          0     8
+025192  Accumulation method        		    Code-Table   0          0     8
+025193  Adjustment factor        		    Numeric      2          0    10
+029192  Type of rotation ellipsoid        	    Code-Table   0          0     3
+029193  Long Origin        			    Degree       2     -18000    16
+029194  Lat Origin        			    Degree       2      -9000    15
+029195  X-Offset        			    Meters       0  -33554432    26
+029196  Y-Offset        			    Meters       0  -33554432    26
+029197  Standard parallel 1        		    Degree       2      -9000    15
+029198  Standard parallel 2        		    Degree       2      -9000    15
+029199  Semi-major axis of rotation ellipsoid       Meters       0          0    26
+029200  Semi-minor axis of rotation ellipsoid       Meters       0          0    26
+029201  Projection type        	    		    Code-Table   0          0     5
+029202  Azimuth of initial line     		    Degree       2      -9000    15
+029203  Long Origin        			    Degree       5  -18000000    26
+029204  Lat Origin        			    Degree       5   -9000000    25
+030192  North south view organisation        	    Code-Table   0          0     3
+030193  East west view organisation        	    Code-Table   0          0     3
+030194  Number of bins along the radial        	    Numeric      0          0    12
+030195  Number of azimuths        		    Numeric      0          0    11
+030196  Type of product        			    Code-Table   0          0     8

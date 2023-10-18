@@ -8,8 +8,8 @@ example_PROGRAMS = \
 	encode_delayed_repl
 
 EXTRA_DIST = $(SOURCES)
-INCLUDES = -I../API/Headers -I/usr/include/@PACKAGE@@VERSION_MAJOR@
-LDADD = -L../API/Sources -L/usr/lib/@PACKAGE@@VERSION_MAJOR@ -lecbufr -lm
+INCLUDES = -I../API/Headers -I/usr/include/@PACKAGE@
+LDADD = -L../API/Sources -lecbufr -lm
 
 # decode_sqlite_LDADD = -L../API/Sources -L/usr/lib/@PACKAGE@@VERSION_MAJOR@ \
 #	-lecbufr -lsqlite3 -lm

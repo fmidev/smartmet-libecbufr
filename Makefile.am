@@ -15,7 +15,7 @@ distdir=@PACKAGE_NAME@-@PACKAGE_VERSION@
 
 if HAVE_PKGCONFIG
 # pkg-config file makes it a lot easier to build against libecbufr
-pcdir=@prefix@/lib/pkgconfig
+pcdir=@libdir@/pkgconfig
 pc_DATA = libecbufr.pc
 
 ChangeLog.git:
@@ -26,29 +26,21 @@ ChangeLog.git:
 	fi
 
 libecbufr.pc: Makefile
+	echo $(pcdir)
 	echo 'prefix=@prefix@' > $@
 	echo 'exec_prefix=@exec_prefix@' > $@
-	echo 'libdir=@libdir@/@PACKAGE@@PACKAGE_VERSION@' >> $@
-	echo 'includedir=@includedir@/@PACKAGE@@PACKAGE_VERSION@' >> $@
+	echo 'libdir=@libdir@' >> $@
+	echo 'includedir=@includedir@/@PACKAGE@' >> $@
 	echo >> $@
 	echo 'Name: @PACKAGE@' >> $@
 	echo 'Version: @PACKAGE_VERSION@' >> $@
 	echo 'Description: Environment Canada BUFR Library' >> $@
 	echo 'URL: https://github.com/ECCC-MSC/libecbufr' >> $@
-	echo 'Libs: -L$${libdir} -lecbufr' >> $@
+	echo 'Libs: -lecbufr' >> $@
 	echo 'Libs.private: -lm' >> $@
 	echo 'Cflags: -I$${includedir}' >> $@
 
 endif
-
-# library is installed in a "non-standard" location, and we
-# want the linker search path to pick it up. For older distros
-# we'd have to modify /etc/ld.so.conf directly. This is cleaner.
-install-data-local:
-	if test -d /etc/ld.so.conf.d/; then \
-		$(mkinstalldirs) $(DESTDIR)/etc/ld.so.conf.d/ ; \
-		echo '@libdir@/@PACKAGE@@PACKAGE_VERSION@' > $(DESTDIR)/etc/ld.so.conf.d/@PACKAGE@.conf ; \
-	fi
 
 pkg: make_debsrcpkg all
 	./make_debsrcpkg @PACKAGE_NAME@ @PACKAGE_VERSION@
